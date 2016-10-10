@@ -1,8 +1,15 @@
-#include "ringbuffer.h"
+/**
+ * Implements a simple lock-free circular buffer that can be used as a bounded queue.
+ *
+ * This implementation is safe for multiple producers and consumers.
+ *
+ * Dennis Futselaar (C) 2016. Released under the 2-clause BSD license.
+ */
+
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
-#include <assert.h>
+#include "ringbuffer.h"
 
 RingBuffer *ringBufferInit(int64_t size)
 {
