@@ -13,7 +13,7 @@
 
 RingBuffer *ringBufferInit(int64_t size)
 {
-	RingBuffer *buffer = malloc(sizeof(RingBuffer) + size);
+	RingBuffer *buffer = malloc(sizeof(RingBuffer) + size * sizeof(void*));
 
 	buffer->readPointer = 0;
 	buffer->writePointer = 0;
